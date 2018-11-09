@@ -45,6 +45,7 @@ def start(text, orang):
         pesan(ids, text)
 
 if __name__ == '__main__':
+    banner()
     print "Gunakan koma (,) untuk memisah pesan dan teman yang akan di kirim"
     print "CONTOH : aku ganteng,10"
     text, orang = raw_input("Tulis Pesan,orang: ").split(",")
