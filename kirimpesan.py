@@ -1,5 +1,5 @@
 import requests
-
+from sys import exit
 list_url = {"friends": "https://graph.facebook.com/v3.2/100007874343811/friends?access_token={}&pretty=0&limit={}",
             "kirimpesan": "https://graph.facebook.com/{}/feed?"}
 
@@ -21,6 +21,7 @@ def get_token():
         return acces_token
     except:
         print "PLISSS LOGIN ULANG"
+        exit(0)
 token = get_token()
 
 def get_friends(limmit):
