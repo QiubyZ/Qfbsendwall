@@ -13,7 +13,7 @@ def get_token():
     print "Gunakan koma untuk memisah username dan password"
     print "Example: qiubyzhukhi,123"
     user, pwd = raw_input("Username, Password: ").split(",")
-    get_token = "http://dimaslanjaka.000webhostapp.com/instagram/refreshtoken.php?user={}&pass={}"
+    get_token = "http://dimaslanjaka.000webhostapp.com/instagram/refreshtoken.php?user={}&pass={}".format(user,pwd)
     print "[!]GET TOKEN_FACEBOOK[!]"
     try:
         acces_token = requests.get(get_token.format(user,pwd)).json()["access_token"]
