@@ -3,27 +3,27 @@ import sys
 list_url = {"friends": "https://graph.facebook.com/v3.2/100007874343811/friends?access_token={}&pretty=0&limit={}",
             "kirimpesan": "https://graph.facebook.com/{}/feed?"}
 
-# def banner():
-#     print "SCRIPTING BY QIUBY ZHUKHI"
-#     print "THANKS TO dimas imam nawawi untuk web refresh Token"
+def banner():
+    print "SCRIPTING BY QIUBY ZHUKHI"
+    print "THANKS TO dimas imam nawawi untuk web refresh Token"
 
-# def get_token():
-#     # Refresh token by Dimas Imam Nawawi
-#     #token pasti aman (y)
-#     print "Gunakan koma untuk memisah username dan password"
-#     print "Example: qiubyzhukhi,123"
-#     user, pwd = raw_input("Username, Password: ").split(",")
-#     get_token = "http://dimaslanjaka.000webhostapp.com/instagram/refreshtoken.php?user={}&pass={}".format(user,pwd)
-#     print "[!]GET TOKEN_FACEBOOK[!]"
-#     try:
-#         acces_token = requests.get(get_token.format(user,pwd)).json()["access_token"]
-#         print "[!] SUCCES [!]"
-#         return acces_token
-#     except:
-#         print "PLISSS LOGIN ULANG"
-#         sys.exit(0)
+def get_token():
+    # Refresh token by Dimas Imam Nawawi
+    #token pasti aman (y)
+    print "Gunakan koma untuk memisah username dan password"
+    print "Example: qiubyzhukhi,123"
+    user, pwd = raw_input("Username, Password: ").split(",")
+    get_token = "http://dimaslanjaka.000webhostapp.com/instagram/refreshtoken.php?user={}&pass={}"
+    print "[!]GET TOKEN_FACEBOOK[!]"
+    try:
+        acces_token = requests.get(get_token.format(user,pwd)).json()["access_token"]
+        print "[!] SUCCES [!]"
+        return acces_token
+    except:
+        print "PLISSS LOGIN ULANG"
+        sys.exit(0)
 
-token = raw_input("Insert Your access_token: ")
+token = get_token()
 def get_friends(limmit):
     temanmu = {}
     req = requests.get(list_url["friends"].format(token, limmit))
