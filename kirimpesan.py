@@ -1,6 +1,6 @@
 import requests
 import sys
-list_url = {"friends": "https://graph.facebook.com/v3.2/100007874343811/friends?access_token={}&pretty=0&limit={}",
+list_url = {"friends": "https://graph.facebook.com/v3.2/me/friends?access_token={}&pretty=0&limit={}",
             "kirimpesan": "https://graph.facebook.com/{}/feed?"}
 
 def banner():
